@@ -1,5 +1,4 @@
 "use client"
-
 import { motion } from "framer-motion"
 
 export function Marquee() {
@@ -9,7 +8,7 @@ export function Marquee() {
     "GradCAM", "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT", 
     "Full Stack Development", "NLP", "PCB Design", "SMTs", "Assembling", "GradCAM", 
     "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT", 
-    "Full Stack Development", "HardWare", "PCB Design", "SMTs", "Assembling", "GradCAM",
+    "Full Stack Development", "HardWare", "PCB Design", "SMTs", "Assembling", "GradCAM", 
     "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT", 
     "Full Stack Development", "NLP", "PCB Design", "SMTs", "Assembling", 
     "GradCAM", "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT", 
@@ -22,9 +21,14 @@ export function Marquee() {
     <div className="relative flex overflow-hidden bg-primary/5 py-10">
       {/* First marquee (left to right) */}
       <motion.div
-        className="flex min-w-full shrink-0 items-center justify-start gap-8 px-2"
+        className="flex items-center justify-start gap-8 px-2"
         animate={{ x: ["0%", "-100%"] }}
-        transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+        transition={{ 
+          duration: 80, 
+          repeat: Number.POSITIVE_INFINITY, 
+          ease: "linear", 
+          repeatDelay: 1 
+        }}
       >
         {logos.map((logo, index) => (
           <div
@@ -38,9 +42,14 @@ export function Marquee() {
 
       {/* Second marquee (right to left) */}
       <motion.div
-        className="flex min-w-full shrink-0 items-center justify-start gap-8 px-2"
+        className="flex items-center justify-start gap-8 px-2"
         animate={{ x: ["100%", "0%"] }}
-        transition={{ duration: 65, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+        transition={{ 
+          duration: 140, 
+          repeat: Number.POSITIVE_INFINITY, 
+          ease: "linear", 
+          repeatDelay: 1
+        }}
       >
         {logos.map((logo, index) => (
           <div
