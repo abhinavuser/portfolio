@@ -40,7 +40,7 @@ export function Marquee() {
       <motion.div
         className="flex min-w-full shrink-0 items-center justify-start gap-8 px-2"
         animate={{ x: ["100%", "0%"] }}
-        transition={{ duration: 45, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+        transition={{ duration: 65, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
       >
         {logos.map((logo, index) => (
           <div
