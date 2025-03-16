@@ -42,35 +42,35 @@ export default function Home() {
           <Link href="/" className="text-xl font-bold">
             AK
           </Link>
-          <nav className="hidden md:block">
-            <ul className="flex space-x-6">
-              <li>
-                <Link href="#about" className="hover:text-primary">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#experience" className="hover:text-primary">
-                  Experience
-                </Link>
-              </li>
-              <li>
-                <Link href="#projects" className="hover:text-primary">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link href="#skills" className="hover:text-primary">
-                  Skills
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="hover:text-primary">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <nav className="hidden md:flex flex-grow justify-center">
+      <ul className="flex space-x-8 text-sm font-semibold">
+        <li>
+          <Link href="#about" className="hover:text-primary  transition-all duration-300 ease-in-out">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link href="#experience" className="hover:text-primary  transition-all duration-300 ease-in-out">
+            Experience
+          </Link>
+        </li>
+        <li>
+          <Link href="#projects" className="hover:text-primary  transition-all duration-300 ease-in-out">
+            Projects
+          </Link>
+        </li>
+        <li>
+          <Link href="#skills" className="hover:text-primary  transition-all duration-300 ease-in-out">
+            Skills
+          </Link>
+        </li>
+        <li>
+          <Link href="#contact" className="hover:text-primary  transition-all duration-300 ease-in-out">
+            Contact
+          </Link>
+        </li>
+      </ul>
+    </nav>
           <div className="flex items-center space-x-4">
           <Button 
             variant="outline" 
@@ -125,7 +125,7 @@ export default function Home() {
                   1000,
                   "Machine Learning Engineer",
                   1000,
-                  "Robotics Enthusiast",
+                  "Robotics and Automation Enthusiast",
                   1000,
                   "Full Stack Developer",
                   1000,
@@ -202,7 +202,7 @@ export default function Home() {
               Aspiring ML Engineer and Researcher with a knack for ARM SoCs and a passion for anything Mathematics. Whether tinkering in lab or coding late into the night, I'm excited to tackle any challenging projects.
               </p>
               <p className="mb-6">
-              My skillset spans a diverse range of fields, from machine learning and deep learning to computer vision, embedded electronics, and ARM SoCs, as well as web development. As a "jack of all trades, master of none," I actually see this as a strength. I enjoy exploring new areas, and whenever I come across an opportunity or something interesting, I dive into it and see where it takes me.
+              As an Embedded Systems Engineer with a focus on IoT and Machine Learning, I specialize in creating real-time, efficient solutions for edge devices. I have hands-on experience deploying machine learning models on microcontrollers and SBCs like Raspberry Pi and ESP32, optimizing them for low power and real-time performance. My expertise spans machine learning, deep learning, computer vision, embedded electronics, ARM SoCs, and web development. I enjoy exploring diverse fields and taking on new challenges—embracing the role of a 'jack of all trades, master of none,' which allows me to continuously learn and adapt to new technologies and opportunities.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -210,8 +210,8 @@ export default function Home() {
                   <p className="text-muted-foreground">Abhinav Kumar</p>
                 </div>
                 <div>
-                  <p className="font-medium">Email:</p>
-                  <p className="text-muted-foreground">chipnxv@gmail.com</p>
+                  <p className="font-medium">Major:</p>
+                  <p className="text-muted-foreground">Electrical & Electronical Engineering</p>
                 </div>
                 <div>
                   <p className="font-medium">Location:</p>
@@ -263,7 +263,7 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <ProjectCard
               title="VESTERN"
-              description="All-in-One Financial Assistant-Bringing ease ti Financing & Investing"
+              description="All-in-One Financial Assistant - Bringing ease to Financing & Investing through fully automated Financial Agent"
               image="/images/vestern.png"
               tags={["Jupyter", "Python","RAG","Next.js", "Flutter", "Postresql"]}
               link="https://github.com/abhinavuser/VESTERN"

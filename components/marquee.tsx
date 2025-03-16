@@ -3,18 +3,18 @@ import { motion } from "framer-motion"
 
 export function Marquee() {
   const logos = [
-    "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT", 
-    "Full Stack Development", "HardWare", "PCB Design", "SMTs", "Assembling", 
-    "GradCAM", "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT", 
-    "Full Stack Development", "NLP", "PCB Design", "SMTs", "Assembling", "GradCAM", 
-    "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT", 
-    "Full Stack Development", "HardWare", "PCB Design", "SMTs", "Assembling", "GradCAM", 
-    "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT", 
-    "Full Stack Development", "NLP", "PCB Design", "SMTs", "Assembling", 
-    "GradCAM", "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT", 
-    "Full Stack Development", "HardWare", "PCB Design", "SMTs", "Assembling", "GradCAM", 
-    "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT", 
-    "Full Stack Development", "NLP", "PCB Design", "SMTs", "Assembling", "GradCAM"
+    "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT and Robotics", 
+    "Full Stack Development", "HardWare", "PCB Design", "SMTs", "ARM SoCs", 
+    "GradCAM", "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT and Robotics", 
+    "Full Stack Development", "NLP", "PCB Design", "SMTs", "ARM SoCs", "GradCAM", 
+    "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT and Robotics", 
+    "Full Stack Development", "HardWare", "PCB Design", "SMTs", "ARM SoCs", "GradCAM", 
+    "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT and Robotics", 
+    "Full Stack Development", "NLP", "PCB Design", "SMTs", "ARM SoCs", 
+    "GradCAM", "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT and Robotics", 
+    "Full Stack Development", "HardWare", "PCB Design", "SMTs", "ARM SoCs", "GradCAM", 
+    "Machine Learning", "Deep Learning", "Embedded Systems", "Computer Vision", "IoT and Robotics", 
+    "Full Stack Development", "NLP", "PCB Design", "SMTs", "ARM SoCs", "GradCAM"
   ]
 
   return (
