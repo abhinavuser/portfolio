@@ -173,6 +173,7 @@ export default function Home() {
           >
             <h2 className="mb-2 text-3xl font-bold md:text-4xl">About Me</h2>
             <div className="mx-auto mb-4 h-1 w-20 bg-primary"></div>
+            <p className="text-muted-foreground">Get to know me</p>
           </motion.div>
 
           <div className="flex flex-col items-center gap-10 md:flex-row md:items-start">
@@ -256,58 +257,49 @@ export default function Home() {
           >
             <h2 className="mb-2 text-3xl font-bold md:text-4xl">My Projects</h2>
             <div className="mx-auto mb-4 h-1 w-20 bg-primary"></div>
-            <p className="text-muted-foreground">Some of my recent work</p>
+            <p className="text-muted-foreground">Some of my works</p>
           </motion.div>
-
-          <Tabs defaultValue="all" className="mb-8">
-            <TabsList className="mx-auto">
-              <TabsTrigger value="all">All</TabsTrigger>
-              <TabsTrigger value="web">Web</TabsTrigger>
-              <TabsTrigger value="mobile">Mobile</TabsTrigger>
-              <TabsTrigger value="design">Design</TabsTrigger>
-            </TabsList>
-          </Tabs>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <ProjectCard
               title="VESTERN"
               description="All-in-One Financial Assistant-Bringing ease ti Financing & Investing"
-              image="/placeholder.svg?height=300&width=500"
+              image="/images/vestern.png"
               tags={["Jupyter", "Python","RAG","Next.js", "Flutter", "Postresql"]}
               link="https://github.com/abhinavuser/VESTERN"
             />
             <ProjectCard
               title="Oil Detection"
               description="Automated oil spill detection system for early detection of oil spills using ResNet Models- smart india hackothon project"
-              image="/images/github.png"
+              image="/images/oil.png"
               tags={["Python", "PHP", "Pytorch", "Flask", "HTML", "CSS", "JS"]}
               link="https://github.com/abhinavuser/oil_detection_sih"
             />
             <ProjectCard
-              title="Women Safety Software"
+              title="DefenShe"
               description="Women safety software and SOS detection Model Interface"
-              image="/placeholder.svg?height=300&width=500"
+              image="/images/women.png"
               tags={["Python", "Javascript", "Firebase", "Flask", "Flutter"]}
               link="https://github.com/abhinavuser/women-safety"
             />
             <ProjectCard
               title="Network Intrusion"
               description="Network Intrusion and Anomaly Detection via TCP/IP Dump Analysis"
-              image="/placeholder.svg?height=300&width=500"
+              image="/images/network.png"
               tags={["Python", "Pandas", "TKinter", "Scikit-learn"]}
               link="https://github.com/abhinavuser/network_intrusion"
             />
             <ProjectCard
               title="nStore Interface"
               description="An Automatic Customizable Order Management System for nStore E-Commerce Company - Internship Project"
-              image="/placeholder.svg?height=300&width=500"
+              image="/images/nstore.png"
               tags={["Vue.js", "Node.js","Express.js", "API Integration","Postman"]}
               link="https://github.com/abhinavuser/nstoreinterface"
             />
             <ProjectCard
               title="Cardiac App"
               description="Real-Time Heart-Rate Tracking Application Using AD8232 ECG Sensor Controlled by ESP32"
-              image="/placeholder.svg?height=300&width=500"
+              image="/images/cardiac.jpg"
               tags={["Flutter", "Arduino IDE", "PyPortal", "ESP32", "Firebase"]}
               link="https://github.com/abhinavuser/cardiac_tracker"
             />

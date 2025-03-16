@@ -25,12 +25,30 @@ const experiences = [
     ],
   },
   {
-    title: "Web Developer",
-    company: "Creative Agency",
-    period: "2016 - 2018",
+    title: "Technical Team Member",
+    company: "Google Developer Groups Club",
+    period: "Sep 2024 - Present",
     description: [
-      "Built responsive websites for various clients using HTML, CSS, and JavaScript.",
-      "Worked closely with the design team to ensure high-quality implementations."
+      "Involved in club meetings and volunteered as the Co-Organizer of DevsHouse’25 flagship event.",
+      "Worked on a Data Science project involving studying MIDI Files of Popular Music and trends in melody."
+    ],
+  },
+  {
+    title: "Web Developer",
+    company: "IEEE Computer Society",
+    period: "Aug 2024 - Present",
+    description: [
+      "Worked on developing websites for events like Hackhub’25 and Builders Hut.",
+      "Part of the Organizing committee and Technical Support for Events and Hackathons."
+    ],
+  },
+  {
+    title: "Core Team Member",
+    company: "Havoltz Club",
+    period: "Aug 2024 - Present",
+    description: [
+      "Conducted weekly meetings to track project progress and attended monthly lectures on core concepts.",
+      "Project Lead for the ongoing AGV project, focusing on Onshape 3D modeling and computer vision."
     ],
   },
 ]
