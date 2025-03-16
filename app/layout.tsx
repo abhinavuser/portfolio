@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Abhinav | Portfolio',
   description: 'Personal portfolio of Abhinav',
   generator: 'v0.dev',
+  icons: '/logo.png'
 }
 
 export default function RootLayout({
