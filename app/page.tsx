@@ -76,7 +76,7 @@ export default function Home() {
             variant="outline" 
             size="sm" 
             className="hidden md:flex"
-            onClick={() => window.open('https://drive.google.com/file/d/1X15fCbP1bbkULnMiaICCsY5m93n8n4cf/view?usp=sharing', '_blank')}
+            onClick={() => window.open('https://docs.google.com/document/d/1QnGajxJsTNjzvL954ZbCgGKa3AqR_TyvvO-TBYoM2MU/edit?usp=sharing', '_blank')}
           >
             <Download className="mr-2 h-4 w-4" />
             Download CV
