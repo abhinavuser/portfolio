@@ -202,7 +202,7 @@ export default function Home() {
               Aspiring ML Engineer and Researcher with a knack for ARM SoCs and a passion for anything Mathematics. Whether tinkering in lab or coding late into the night, I'm excited to tackle any challenging projects.
               </p>
               <p className="mb-6">
-              As an Embedded Systems Engineer with a focus on IoT and Machine Learning, I specialize in creating real-time, efficient solutions for edge devices. I have hands-on experience deploying machine learning models on microcontrollers and SBCs like Raspberry Pi and ESP32, optimizing them for low power and real-time performance. My expertise spans machine learning, deep learning, computer vision, embedded electronics, ARM SoCs, and web development. I enjoy exploring diverse fields and taking on new challenges—embracing the role of a 'jack of all trades, master of none,' which allows me to continuously learn and adapt to new technologies and opportunities.
+              As an Embedded Systems Engineer with a focus on IoT and Machine Learning, I specialize in creating real-time, efficient solutions for edge devices. I have hands-on experience deploying machine learning models on microcontrollers and SBCs like Raspberry Pi and ESP32 also Firmwares and Middlewares, optimizing them for low power and real-time performance. My expertise spans machine learning, deep learning, computer vision, AI hardware, ARM SoCs, and web development. I enjoy exploring diverse fields and taking on new challenges—embracing the role of a 'jack of all trades, master of none,' which allows me to continuously learn and adapt to new technologies and opportunities.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -211,7 +211,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="font-medium">Major:</p>
-                  <p className="text-muted-foreground">Electrical & Electronical Engineering</p>
+                  <p className="text-muted-foreground">Electrical & Electronics Engineering</p>
                 </div>
                 <div>
                   <p className="font-medium">Location:</p>
