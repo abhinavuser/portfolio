@@ -6,7 +6,7 @@ import { Briefcase } from "lucide-react" // Import the icon we'll use
 
 const experiences = [
   {
-    title: "Electronical Intern",
+    title: "Electronics Intern",
     company: "Thinksemi Infotech",
     period: "Dec 2024 – Jan 2025",
     description: [
@@ -15,7 +15,7 @@ const experiences = [
     ],
   },
   {
-    title: "Web Development Intern",
+    title: "IT Support Intern",
     company: "nStore Retech",
     period: "June 2024 – Aug 2024",
     description: [
@@ -34,7 +34,7 @@ const experiences = [
     ],
   },
   {
-    title: "Web Developer",
+    title: "Technical Team Member",
     company: "IEEE Computer Society",
     period: "Aug 2024 - Present",
     description: [
