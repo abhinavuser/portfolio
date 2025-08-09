@@ -7,13 +7,13 @@ const skillCategories = [
   {
     title: "Programming Languages",
     icon: <Code2 className="h-6 w-6" />,
-    skills: ["Python", "C++", "JavaScript", "TypeScript", "PHP", "MATLAB"],
+    skills: ["Python", "C/C++", "Java", "JavaScript", "TypeScript", "Assembly", "PHP", "MATLAB", "SQL"],
     color: "from-blue-500/20 to-cyan-500/20 dark:from-blue-500/10 dark:to-cyan-500/10"
   },
   {
     title: "Development Tools",
     icon: <Wrench className="h-6 w-6" />,
-    skills: ["Git", "Docker", "Jupyter", "Arduino", "VSCode", "EasyEDA", "OnShape", "LTspice", "LabVIEW", "Postman"],
+    skills: ["Git", "Docker", "Kuberenetes", "Jupyter", "VSCode", "Lime", "EasyEDA", "KiCAD", "Eclipse", "OnShape", "LTspice", "LabVIEW", "Postman"],
     color: "from-purple-500/20 to-pink-500/20 dark:from-purple-500/10 dark:to-pink-500/10"
   },
   {
@@ -25,7 +25,7 @@ const skillCategories = [
   {
     title: "Databases",
     icon: <Database className="h-6 w-6" />,
-    skills: ["MongoDB", "MySQL", "PostgreSQL", "SQLite", "Firebase"],
+    skills: ["MongoDB", "MySQL", "PostgreSQL", "SQLite", "Firebase", "ChromaDB ", "Milvus"],
     color: "from-orange-500/20 to-red-500/20 dark:from-orange-500/10 dark:to-red-500/10"
   }
 ]

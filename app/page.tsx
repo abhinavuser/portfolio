@@ -3,18 +3,18 @@
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Download, Github, Linkedin } from "lucide-react";
+import { Download, Github, Linkedin, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Marquee } from "@/components/marquee";
 import { ProjectCard } from "@/components/project-card";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { SkillsGrid } from "@/components/skills-grid";
 import { ContactForm } from "@/components/contact-form";
 import { StarfieldBackground } from "@/components/StarfieldBackground"
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -36,55 +36,7 @@ export default function Home() {
   return (
     <StarfieldBackground>
 
-      {/* Navbar */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="text-xl font-bold">
-            AK
-          </Link>
-          <nav className="hidden md:flex flex-grow justify-center">
-      <ul className="flex space-x-8 text-sm font-semibold">
-        <li>
-          <Link href="#about" className="hover:text-primary  transition-all duration-300 ease-in-out">
-            About
-          </Link>
-        </li>
-        <li>
-          <Link href="#experience" className="hover:text-primary  transition-all duration-300 ease-in-out">
-            Experience
-          </Link>
-        </li>
-        <li>
-          <Link href="#projects" className="hover:text-primary  transition-all duration-300 ease-in-out">
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link href="#skills" className="hover:text-primary  transition-all duration-300 ease-in-out">
-            Skills
-          </Link>
-        </li>
-        <li>
-          <Link href="#contact" className="hover:text-primary  transition-all duration-300 ease-in-out">
-            Contact
-          </Link>
-        </li>
-      </ul>
-    </nav>
-          <div className="flex items-center space-x-4">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="hidden md:flex"
-            onClick={() => window.open('https://docs.google.com/document/d/1QnGajxJsTNjzvL954ZbCgGKa3AqR_TyvvO-TBYoM2MU/edit?usp=sharing', '_blank')}
-          >
-            <Download className="mr-2 h-4 w-4" />
-            Download CV
-          </Button>
-            <ThemeToggle />
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Sidebar */}
       <div className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center space-y-6 md:flex">
@@ -199,11 +151,20 @@ export default function Home() {
             >
               <h3 className="mb-4 text-2xl font-bold">Who am I?</h3>
               <p className="mb-4">
-              Aspiring ML Engineer and Researcher with a knack for ARM SoCs and a passion for anything Mathematics. Whether tinkering in lab or coding late into the night, I'm excited to tackle any challenging projects.
+              Embedded AI Engineer with expertise in MLOps, Hardware across a range of SoCs and a passion for anything Mathematics. Whether exploring in lab or coding late into the night, I'm excited to tackle any challenging projects.
               </p>
               <p className="mb-6">
-              As an Embedded Systems Engineer with a focus on IoT and Machine Learning, I specialize in creating real-time, efficient solutions for edge devices. I have hands-on experience deploying machine learning models on microcontrollers and SBCs like Raspberry Pi and ESP32 also Firmwares and Middlewares, optimizing them for low power and real-time performance. My expertise spans machine learning, deep learning, computer vision, AI hardware, ARM SoCs, and web development. I enjoy exploring diverse fields and taking on new challenges—embracing the role of a 'jack of all trades, master of none,' which allows me to continuously learn and adapt to new technologies and opportunities.
+              I am an Embedded Electronics Engineer with a focus on embedded firmware, machine learning, and MLOps. I have experience deploying ML models on microcontrollers and SBCs like STM32, ESP32, and Raspberry Pi, with expertise in firmware, middleware, and Embedded Linux. My work spans the full ML lifecycle, from training to deployment, including model compression and optimization for edge devices. My research interests lie at the intersection of LLMs, agentic AI, and RAG, working with open-source models and frameworks to explore alignment, multi-agent systems, and efficient deployment on constrained hardware.
               </p>
+              <Link href="/about" className="inline-block">
+                <Button
+                  size="lg"
+                  className="group mb-6 rounded-xl bg-gradient-to-r from-primary to-gray-600 text-primary-foreground shadow-lg ring-2 ring-primary/40 hover:from-gray-700 hover:to-primary hover:ring-primary/60 transition-all"
+                >
+                  Read more about me
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="font-medium">Name:</p>

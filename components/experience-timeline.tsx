@@ -2,13 +2,34 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Briefcase } from "lucide-react" // Import the icon we'll use
+import { Briefcase } from "lucide-react" // Fallback icon
+import Image from "next/image"
 
 const experiences = [
+  {
+    title: "Embedded Firmware Engineer",
+    company: "Ampnics",
+    period: "July 2025 – Present",
+    logo: "/images/ampnics.jpg",
+    description: [
+      "Working on the development of firmware for the company's products unit testing unique development boards with different Industry standard Sensors."
+    ],
+  },
+  {
+    title: "AI & SAP Intern",
+    company: "HCLTech",
+    period: "June 2025 – Aug 2025",
+    logo: "/images/hcltech.jpg",
+    description: [
+      "Integrated multi-agent workflows, AI-powered code generation, and SAP S/4HANA for intelligent automation.",
+      "Developed an Agentic LLM framework to automate SAP ABAP development and business processes using Generative AI, and gained hands-on experience in ABAP."
+    ],
+  },
   {
     title: "Electronics Intern",
     company: "Thinksemi Infotech",
     period: "Dec 2024 – Jan 2025",
+    logo: "/images/thinksemi_logo.jpg",
     description: [
       "Learned assembly techniques for converters and PCBs, and worked with terminals such as JST, KET, and MOLEX, which are commonly used in the market.",
       "Gained insight into customer fulfillments through onsite industrial company experience, with hands-on hardware work experience."
@@ -18,6 +39,7 @@ const experiences = [
     title: "IT Support Intern",
     company: "nStore Retech",
     period: "June 2024 – Aug 2024",
+    logo: "/images/nstoret.jpg",
     description: [
       "Built and integrated order management systems with Node.js/Express.js, API connections, and a configurable UI for stores and delivery partners.",
       "Designed a responsive frontend using Vue.js for order management and tracking, with dynamic components and MOCK APIs for testing.",
@@ -25,11 +47,32 @@ const experiences = [
     ],
   },
   {
+    title: "Joint Secretary",
+    company: "Havoltz Club",
+    period: "Aug 2024 - Present",
+    logo: "/images/havoltz.jpg",
+    description: [
+      "Conducted monthly lectures on core concepts and organized workshops and Hackathons involving industries and external colleges.",
+      "Project Lead preparing club members for hackathons and competitions like Meshmerize, Cosmoclench and Robofests."
+    ],
+  },
+  {
+    title: "AI/ML Lead",
+    company: "Microsoft Innovations Club",
+    period: "Oct 2024 - Present",
+    logo: "/images/mic.jpg",
+    description: [
+      "AI/ML Lead overseeing AI projects, mentoring team members, and organizing ML events on Kaggle.",
+      "Leading the integration of LLMs and ML models, while guiding teams through project development."
+    ],
+  },
+  {
     title: "Technical Team Member",
     company: "Google Developer Groups Club",
     period: "Sep 2024 - Present",
+    logo: "/images/gdg.jpg",
     description: [
-      "Involved in club meetings and volunteered as the Co-Organizer of DevsHouse’25 flagship event.",
+      "Involved in club meetings and volunteered as the Co-Organizer of DevsHouse’25 MLH hackathon.",
       "Worked on a Data Science project involving studying MIDI Files of Popular Music and trends in melody."
     ],
   },
@@ -37,18 +80,10 @@ const experiences = [
     title: "Technical Team Member",
     company: "IEEE Computer Society",
     period: "Aug 2024 - Present",
+    logo: "/images/ieee.jpg",
     description: [
       "Worked on developing websites for events like Hackhub’25 and Builders Hut.",
       "Part of the Organizing committee and Technical Support for Events and Hackathons."
-    ],
-  },
-  {
-    title: "Core Team Member",
-    company: "Havoltz Club",
-    period: "Aug 2024 - Present",
-    description: [
-      "Conducted weekly meetings to track project progress and attended monthly lectures on core concepts.",
-      "Project Lead for the ongoing AGV project, focusing on Onshape 3D modeling and computer vision."
     ],
   },
 ]
@@ -68,9 +103,13 @@ export function ExperienceTimeline() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary shadow-lg"
+            className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-border shadow-lg overflow-hidden"
           >
-            <Briefcase className="h-8 w-8 text-primary-foreground" />
+            {experience.logo ? (
+              <Image src={experience.logo} alt={`${experience.company} logo`} width={64} height={64} className="object-contain p-2" />
+            ) : (
+              <Briefcase className="h-8 w-8 text-primary" />
+            )}
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
