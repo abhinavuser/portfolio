@@ -175,7 +175,10 @@ export const researchPages: Record<string, ResearchPageContent> = {
     toc: [
       { id: "why", text: "Why Bare-Metal?", level: 2 },
       { id: "setup", text: "Project Setup", level: 2 },
-      { id: "kernel", text: "The Kernel", level: 2 },
+      { id: "linker", text: "The Linker Script", level: 2 },
+      { id: "config", text: "FreeRTOSConfig.h", level: 2 },
+      { id: "kernel", text: "Kernel Integration", level: 2 },
+      { id: "tasks", text: "Tasks and Synchronization", level: 2 },
     ],
   },
   "1d-cnn": {
@@ -196,6 +199,7 @@ export const researchPages: Record<string, ResearchPageContent> = {
       { id: "overview", text: "Overview", level: 2 },
       { id: "config", text: "Camera Config", level: 2 },
       { id: "streaming", text: "Streaming", level: 2 },
+      { id: "thermal", text: "Thermal Issues", level: 2 },
     ],
   },
   "toy-nn": {
@@ -213,9 +217,13 @@ export const researchPages: Record<string, ResearchPageContent> = {
     description: "Privacy-first platform fusing cyber threat telemetry with financial transactions using GNNs.",
     breadcrumbs: [{ label: "Research", href: "/research" }, { label: "CyberFin Nexus" }],
     toc: [
+      { id: "problem", text: "The SOC-AML Problem", level: 2 },
       { id: "architecture", text: "Architecture", level: 2 },
       { id: "gat", text: "Graph Attention Networks", level: 2 },
       { id: "fl", text: "Federated Learning Engine", level: 2 },
+      { id: "adversarial", text: "Adversarial RL Simulation", level: 2 },
+      { id: "dashboard", text: "Dashboard and Audit Trail", level: 2 },
+      { id: "results", text: "Results", level: 2 },
     ],
   },
   "llm-edge": {
@@ -234,8 +242,10 @@ export const researchPages: Record<string, ResearchPageContent> = {
     breadcrumbs: [{ label: "Research", href: "/research" }, { label: "V4L2 Zero-Copy" }],
     toc: [
       { id: "zero-copy", text: "Zero-Copy Memory Paradigms", level: 2 },
-      { id: "dma", text: "Direct Memory Access (DMA)", level: 2 },
-      { id: "latency", text: "Latency Reduction", level: 2 },
+      { id: "v4l2", text: "V4L2 Capture", level: 2 },
+      { id: "dma", text: "DMA-BUF File Descriptors", level: 2 },
+      { id: "pipeline", text: "Full Pipeline Architecture", level: 2 },
+      { id: "latency", text: "Latency Results", level: 2 },
     ],
   },
 

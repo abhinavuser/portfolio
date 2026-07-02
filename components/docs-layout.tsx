@@ -330,7 +330,7 @@ export function ContentCard({
     <Link href={href} className="group block">
       <motion.div
         whileHover={{ y: -2 }}
-        className="rounded-xl border border-border/50 bg-background/50 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5"
+        className="rounded-xl border border-border bg-card text-card-foreground p-5 shadow-md transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
       >
         <div className="flex items-start gap-3">
           {icon && (

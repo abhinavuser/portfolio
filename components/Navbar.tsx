@@ -31,7 +31,7 @@ export default function Navbar() {
                   href={item.href}
                   className={`hover:text-primary transition-all duration-300 ease-in-out ${
                     pathname === item.href
-                      ? "text-primary underline underline-offset-4"
+                      ? "text-primary font-bold"
                       : "text-muted-foreground"
                   }`}
                 >

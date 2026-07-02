@@ -26,7 +26,7 @@ const navCards = [
   },
   {
     title: "About",
-    description: "Projects, experience & more",
+    description: "Projects, experience & skills",
     href: "/about",
     icon: User,
     delay: 0.4,
@@ -139,7 +139,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: card.delay }}
                 >
                   <Link href={card.href} className="group block">
-                    <div className="flex items-center justify-between rounded-xl border border-border/50 bg-background/50 px-6 py-4 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:bg-background/80 hover:shadow-lg hover:shadow-primary/5">
+                    <div className="flex items-center justify-between rounded-xl border border-border bg-card text-card-foreground px-6 py-4 shadow-md transition-all duration-300 hover:border-primary/50 hover:shadow-lg">
                       <div className="flex items-center gap-4">
                         <card.icon className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-primary" />
                         <div>

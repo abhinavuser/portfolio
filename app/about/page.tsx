@@ -9,7 +9,6 @@ import { Marquee } from "@/components/marquee";
 import { ProjectCard } from "@/components/project-card";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { SkillsGrid } from "@/components/skills-grid";
-import { ContactForm } from "@/components/contact-form";
 import { StarfieldBackground } from "@/components/StarfieldBackground";
 import Navbar from "@/components/Navbar";
 
@@ -64,7 +63,7 @@ export default function AboutPage() {
             >
               <img
                 src="/images/abhi-about.jpg"
-                alt="John Doe"
+                alt="Abhinav Kumar"
                 className="h-full w-full object-cover"  // Ensure it covers the circle fully
               />
             </motion.div>
@@ -108,23 +107,6 @@ export default function AboutPage() {
         {/* Marquee Section */}
         <Marquee />
 
-        {/* Experience Section */}
-        <section id="experience" className="py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16 text-center"
-          >
-            <h2 className="mb-2 text-3xl font-bold md:text-4xl">My Experience</h2>
-            <div className="mx-auto mb-4 h-1 w-20 bg-primary"></div>
-            <p className="text-muted-foreground">My professional journey</p>
-          </motion.div>
-
-          <ExperienceTimeline />
-        </section>
-
         {/* Projects Section */}
         <section id="projects" className="py-20">
           <motion.div
@@ -141,48 +123,65 @@ export default function AboutPage() {
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <ProjectCard
-              title="VESTERN"
-              description="All-in-One Financial Assistant - Bringing ease to Financing & Investing through fully automated Financial Agent"
-              image="/images/vestern.png"
-              tags={["Jupyter", "Python", "RAG", "Next.js", "Flutter", "Postresql"]}
-              link="https://github.com/abhinavuser/VESTERN"
+              title="CyberFin Nexus"
+              description="Fuses cyber threat intel with financial transaction graphs to catch money mule rings using GATs and Federated Learning. Includes a 7-tab Streamlit dashboard with adversarial RL testing and blockchain audit trail."
+              image="/images/cyber.png"
+              tags={["Python", "PyTorch", "GNN", "Federated Learning", "Streamlit"]}
+              link="https://github.com/abhinavuser/cyberfin-nexus"
             />
             <ProjectCard
-              title="Oil Detection"
-              description="Automated oil spill detection system for early detection of oil spills using ResNet Models- smart india hackothon project"
-              image="/images/oil.png"
-              tags={["Python", "PHP", "Pytorch", "Flask", "HTML", "CSS", "JS"]}
-              link="https://github.com/abhinavuser/oil_detection_sih"
-            />
-            <ProjectCard
-              title="DefenShe"
-              description="Women safety software and SOS detection Model Interface"
-              image="/images/women.png"
-              tags={["Python", "Javascript", "Firebase", "Flask", "Flutter"]}
-              link="https://github.com/abhinavuser/women-safety"
-            />
-            <ProjectCard
-              title="Network Intrusion"
-              description="Network Intrusion and Anomaly Detection via TCP/IP Dump Analysis"
-              image="/images/network.png"
-              tags={["Python", "Pandas", "TKinter", "Scikit-learn"]}
-              link="https://github.com/abhinavuser/network_intrusion"
-            />
-            <ProjectCard
-              title="nStore Interface"
-              description="An Automatic Customizable Order Management System for nStore E-Commerce Company - Internship Project"
-              image="/images/nstore.png"
-              tags={["Vue.js", "Node.js", "Express.js", "API Integration", "Postman"]}
-              link="https://github.com/abhinavuser/nstoreinterface"
-            />
-            <ProjectCard
-              title="Cardiac App"
-              description="Real-Time Heart-Rate Tracking Application Using AD8232 ECG Sensor Controlled by ESP32"
+              title="FreeRTOS From Scratch"
+              description="Built FreeRTOS firmware from scratch on STM32 Nucleo covering task scheduling, semaphores, mutexes and interrupt handling. The whole point was learning RTOS internals without relying on CubeIDE generated code."
               image="/images/cardiac.jpg"
-              tags={["Flutter", "Arduino IDE", "PyPortal", "ESP32", "Firebase"]}
-              link="https://github.com/abhinavuser/cardiac_tracker"
+              tags={["C", "FreeRTOS", "STM32", "ARM Cortex-M", "Makefile"]}
+              link="https://github.com/abhinavuser/freertos-from-scratch"
+            />
+            <ProjectCard
+              title="Cluster Stat"
+              description="C++ dashboard for embedded Linux devices using LVGL to monitor cluster health metrics in real-time. Built it as a lightweight alternative to heavy web dashboards on resource constrained SBCs."
+              image="/images/lvgl.jpg"
+              tags={["C", "C++", "LVGL", "Embedded Linux", "CMake", "Python"]}
+              link="https://github.com/abhinavuser/cluster-stat"
+            />
+            <ProjectCard
+              title="VESTERN"
+              description="All-in-one AI financial assistant that uses Agentic RAG for automated stock trading and investment analysis. Backend runs fine-tuned LLMs with blockchain secured transactions and anonymous Aadhar verification."
+              image="/images/vestern.png"
+              tags={["Python", "Next.js", "Flutter", "RAG", "Blockchain", "PostgreSQL"]}
+              link="https://github.com/abhinavuser/vestern"
+            />
+            <ProjectCard
+              title="Fusion Algorithm"
+              description="Exposure fusion running on a XIAO ESP32-S3 with OV2640 camera. Captures three different exposures and fuses them into one well-exposed image right on the microcontroller with per-pixel weighting."
+              image="/images/xiao.jpg"
+              tags={["C++", "ESP32", "PlatformIO", "MATLAB", "Python", "Processing"]}
+              link="https://github.com/abhinavuser/fusion_algorithm"
+            />
+            <ProjectCard
+              title="RakshiQ"
+              description="Electric fence detection system built for SIH 2025. Uses TDR analysis for fault location with ±2m accuracy, LSTM models for 24hr voltage spike prediction, and RCD monitoring for instant safety disconnection."
+              image="/images/rakshi.webp"
+              tags={["Next.js", "Flutter", "Python", "MATLAB", "LSTM", "IEC 61850"]}
+              link="https://github.com/abhinavuser/electric_fence_sih"
             />
           </div>
+        </section>
+
+        {/* Experience Section */}
+        <section id="experience" className="py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
+          >
+            <h2 className="mb-2 text-3xl font-bold md:text-4xl">My Experience</h2>
+            <div className="mx-auto mb-4 h-1 w-20 bg-primary"></div>
+            <p className="text-muted-foreground">My professional journey</p>
+          </motion.div>
+
+          <ExperienceTimeline />
         </section>
 
         {/* Skills Section */}
@@ -202,100 +201,7 @@ export default function AboutPage() {
           <SkillsGrid />
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16 text-center"
-          >
-            <h2 className="mb-2 text-3xl font-bold md:text-4xl">Get In Touch</h2>
-            <div className="mx-auto mb-4 h-1 w-20 bg-primary"></div>
-            <p className="text-muted-foreground">Let's work together</p>
-          </motion.div>
 
-          <div className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h3 className="mb-4 text-2xl font-bold">Contact Information</h3>
-              <p className="mb-6">
-                Feel free to reach out to me for any inquiries, project proposals, or just to say hello!
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-map-pin"
-                    >
-                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Location</h4>
-                    <p className="text-muted-foreground">Chennai, Tamil Nadu</p>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-mail"
-                    >
-                      <rect width="20" height="16" x="2" y="4" rx="2" />
-                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Email</h4>
-                    <p className="text-muted-foreground">chipnxv@gmail.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-phone"
-                    >
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Phone</h4>
-                    <p className="text-muted-foreground">99949 22460</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <ContactForm />
-          </div>
-        </section>
       </main>
 
       <footer className="border-t bg-background py-8">

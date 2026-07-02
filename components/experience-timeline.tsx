@@ -2,17 +2,17 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Briefcase } from "lucide-react" // Fallback icon
+import { Briefcase, Trophy } from "lucide-react" // Fallback icon
 import Image from "next/image"
 
-const experiences = [
+const professionalExperience = [
   {
-    title: "Rsearch Intern",
+    title: "Research Intern",
     company: "IIT Madras",
     period: "June 2026 – Present",
     logo: "/images/iitm.jpg",
     description: [
-      "Working on the development of firmware for the company's products unit testing unique development boards with different Industry standard Sensors."
+      "Assessing cyber risks in industrial control systems and implementing secure protocols for safe IT to OT network integration.",
     ],
   },
   {
@@ -21,7 +21,8 @@ const experiences = [
     period: "July 2025 – Present",
     logo: "/images/ampnics.jpg",
     description: [
-      "Working on the development of firmware for the company's products unit testing unique development boards with different Industry standard Sensors."
+      "Designing and testing PCBs and developing embedded firmware including BSPs, bootloaders, drivers, and embedded UIs while building edge AI applications.",
+      "Working with low-level interfaces for hardware-software integration and optimizing system performance."
     ],
   },
   {
@@ -30,8 +31,8 @@ const experiences = [
     period: "Dec 2025 – Apr 2026",
     logo: "/images/kshatra.jpg",
     description: [
-      "Integrated multi-agent workflows, AI-powered code generation, and SAP S/4HANA for intelligent automation.",
-      "Developed an Agentic LLM framework to automate SAP ABAP development and business processes using Generative AI, and gained hands-on experience in ABAP."
+      "Developed an AI-native counter-drone system enabling autonomous detection in edge system, tracking, and kinetic interception in GPS-denied, contested environments using advanced autonomy and optical AI.",
+      "Built an embedded vision pipeline for object detection, Re-ID and tracking with integrated hardware systems."
     ],
   },
   {
@@ -65,6 +66,9 @@ const experiences = [
       "Worked with POSTMAN for API testing. On-Site Internship Experience."
     ],
   },
+]
+
+const extracurricular = [
   {
     title: "Joint Secretary",
     company: "Havoltz Club",
@@ -88,10 +92,10 @@ const experiences = [
   {
     title: "Technical Team Member",
     company: "Google Developer Groups Club",
-    period: "Oct 2024 - Dec2025",
+    period: "Oct 2024 - Dec 2025",
     logo: "/images/gdg.jpg",
     description: [
-      "Involved in club meetings and volunteered as the Co-Organizer of DevsHouse’25 MLH hackathon.",
+      "Involved in club meetings and volunteered as the Co-Organizer of DevsHouse'25 MLH hackathon.",
       "Worked on a Data Science project involving studying MIDI Files of Popular Music and trends in melody."
     ],
   },
@@ -101,16 +105,24 @@ const experiences = [
     period: "Sep 2024 - Sep 2025",
     logo: "/images/ieee.jpg",
     description: [
-      "Worked on developing websites for events like Hackhub’25 and Builders Hut.",
+      "Worked on developing websites for events like Hackhub'25 and Builders Hut.",
       "Part of the Organizing committee and Technical Support for Events and Hackathons."
     ],
   },
 ]
 
-export function ExperienceTimeline() {
+interface Experience {
+  title: string
+  company: string
+  period: string
+  logo: string
+  description: string[]
+}
+
+function TimelineItems({ items }: { items: Experience[] }) {
   return (
     <div className="relative space-y-12 before:absolute before:inset-0 before:left-9 before:ml-px before:h-full before:w-[1px] before:bg-border before:-z-10 md:before:left-1/2 md:before:-ml-px">
-      {experiences.map((experience, index) => (
+      {items.map((experience, index) => (
         <div
           key={index}
           className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
@@ -155,6 +167,32 @@ export function ExperienceTimeline() {
           </motion.div>
         </div>
       ))}
+    </div>
+  )
+}
+
+export function ExperienceTimeline() {
+  return (
+    <div className="space-y-20">
+      {/* Professional Experience */}
+      <TimelineItems items={professionalExperience} />
+
+      {/* Extracurricular Activities Subheading */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center"
+      >
+        <div className="flex items-center justify-center gap-3 mb-2">
+          <h3 className="text-2xl font-bold md:text-3xl">Clubs and Leaderships</h3>
+        </div>
+        <div className="mx-auto mb-4 h-[2px] w-16 bg-primary/50"></div>
+      </motion.div>
+
+      {/* Extracurricular Timeline */}
+      <TimelineItems items={extracurricular} />
     </div>
   )
 }
