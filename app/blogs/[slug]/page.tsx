@@ -171,7 +171,6 @@ void vMonitorTask(void *pvParams) {
       <p>
         after spending months working with tflite, rknn, and armnn runtimes, i wanted to understand what actually goes on under the hood. the best way to learn? build one myself in c++. the goal wasn&apos;t to compete with production tools, it was purely to understand memory management, operator dispatching, tensor layout, and graph execution.
       </p>
-
       <h2 id="architecture">architecture</h2>
       <p>i designed a simple three-layer architecture to keep the abstraction clean:</p>
       <ol>

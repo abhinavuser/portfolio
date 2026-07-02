@@ -111,6 +111,8 @@ class FraudGAT(nn.Module):
           <p>
             In terms of estimated impact, the system prevented an estimated $18.5M in simulated fraud losses across the test dataset. The dashboard processes alerts in under 200ms, fast enough for real-time monitoring during trading hours.
           </p>
+
+          <img src="/images/cyber.png" alt="CyberFin Nexus Dashboard" className="my-8 rounded-xl border border-border shadow-md mx-auto max-h-96 object-contain" />
         </motion.div>
       </DocsLayout>
 

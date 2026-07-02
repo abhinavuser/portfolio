@@ -12,7 +12,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "freertos-stm32-baremetal",
     title: "writing FreeRTOS from scratch on STM32 (without CubeMX)",
-    date: "July 12, 2025",
+    date: "June 12, 2026",
     description:
       "a deep dive into setting up FreeRTOS on an STM32 microcontroller using purely bare-metal registers and Makefiles, completely ditching HAL and CubeMX.",
     tags: ["embedded", "stm32", "freertos", "bare-metal"],
@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "toy-nn-runtime",
     title: "building a minimalist neural network inference engine",
-    date: "August 9, 2024",
+    date: "August 9, 2025",
     description:
       "exploring the fundamentals of inference engines by building a toy neural network runtime from scratch in C++.",
     tags: ["machine-learning", "c++", "runtime", "neural-networks"],
@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "xiao-esp32s3-rtsp-stream",
     title: "RTSP video streaming on the Seeed Studio XIAO ESP32S3",
-    date: "May 28, 2024",
+    date: "May 28, 2025",
     description:
       "a quick guide on how to set up an RTSP video stream using the OV2640 camera on the tiny Seeed Studio XIAO ESP32S3 Sense.",
     tags: ["streaming", "esp32s3", "xiao", "camera"],
@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "rpi4-1d-cnn",
     title: "running a 1D CNN for time-series on Raspberry Pi 4B",
-    date: "March 15, 2024",
+    date: "March 15, 2025",
     description:
       "how to deploy a lightweight 1D convolutional neural network on a Raspberry Pi 4B to process real-time sensor data.",
     tags: ["machine-learning", "raspberry-pi", "1d-cnn", "time-series"],

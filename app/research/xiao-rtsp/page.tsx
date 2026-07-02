@@ -111,6 +111,8 @@ void loop() {
           <p>
             Reducing the resolution from VGA to QVGA and dropping the quality to 15 significantly reduces power consumption and heat, at the cost of a noticeably grainier stream. For most surveillance use cases this tradeoff is worth it since you mainly need to see movement, not read fine text.
           </p>
+
+          <img src="/images/xiao.jpg" alt="Seeed Studio XIAO ESP32S3" className="my-8 rounded-xl border border-border shadow-md mx-auto max-h-96 object-contain" />
         </motion.div>
       </DocsLayout>
 

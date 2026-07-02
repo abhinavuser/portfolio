@@ -69,9 +69,9 @@ export default function TFLiteConversionPage() {
           <h3 id="install-pip">Install pip</h3>
           <pre><code className="language-bash">{`sudo apt-get install python3-pip`}</code></pre>
 
-          <h3 id="clone-examples">Clone the Examples Repository</h3>
-          <pre><code className="language-bash">{`git clone https://github.com/sravansenthiln1/rknn_tflite
-cd rknn_tflite`}</code></pre>
+          <h3 id="clone-examples">Set up Workspace</h3>
+          <pre><code className="language-bash">{`mkdir rknn_workspace
+cd rknn_workspace`}</code></pre>
 
           <h3 id="get-npu-tools">Get the Rockchip NPU Tools</h3>
           <pre><code className="language-bash">{`git clone https://github.com/rockchip-linux/rknn-toolkit2
@@ -91,9 +91,8 @@ version=cp39   # for Python 3.9
 pip3 install rknn-toolkit2/packages/rknn_toolkit2-*-$version-$version-linux_x86_64.whl
 cd ../`}</code></pre>
 
-          <h3 id="downloading-script">Downloading the Script</h3>
-          <p>On your host workspace, get the conversion script:</p>
-          <pre><code className="language-bash">{`wget https://raw.githubusercontent.com/sravansenthiln1/rknn_tflite/main/convert.py`}</code></pre>
+          <h3 id="downloading-script">Conversion Script</h3>
+          <p>Create a python script named <code>convert.py</code> in your workspace.</p>
 
           <h3 id="convert-model">Convert the Model</h3>
           <p>To convert a file such as <code>model.tflite</code>:</p>

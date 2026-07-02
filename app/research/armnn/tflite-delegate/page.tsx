@@ -86,15 +86,9 @@ libarmnnDelegate.so -> libarmnnDelegate.so.29`}</code></pre>
           <h2 id="building-model">Building the Model</h2>
           <p>
             Let&apos;s use a CNN model that predicts digits from the popular MNIST dataset.
-            Check out the example at{" "}
-            <a href="https://github.com/sravansenthiln1/armnn_tflite/tree/main/digit_recognize" target="_blank" rel="noopener noreferrer">
-              armnn_tflite/digit_recognize
-            </a>
-            , or use the{" "}
-            <a href="https://github.com/sravansenthiln1/armnn_tflite/blob/main/digit_recognize/digit_recognize_28.tflite" target="_blank" rel="noopener noreferrer">
-              pre-trained model
-            </a>.
+            You can use a pre-trained TFLite model, or convert your own Keras model to <code>.tflite</code>.
           </p>
+          <img src="/images/mnist.jpg" alt="MNIST dataset sample" className="my-8 rounded-xl border border-border shadow-md mx-auto max-h-64 object-contain" />
 
           <h2 id="running-delegate">Running the Delegate</h2>
           <p>Let&apos;s run through the example script and see what each part does.</p>
