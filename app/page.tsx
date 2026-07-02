@@ -2,24 +2,39 @@
 
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Download, Github, Linkedin, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Github, Linkedin, ArrowRight, BookOpen, FlaskConical, User, Home as HomeIcon } from "lucide-react";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Marquee } from "@/components/marquee";
-import { ProjectCard } from "@/components/project-card";
-import { ExperienceTimeline } from "@/components/experience-timeline";
-import { SkillsGrid } from "@/components/skills-grid";
-import { ContactForm } from "@/components/contact-form";
-import { StarfieldBackground } from "@/components/StarfieldBackground"
+import { StarfieldBackground } from "@/components/StarfieldBackground";
 import Navbar from "@/components/Navbar";
+
+const navCards = [
+  {
+    title: "Blogs",
+    description: "Thoughts, writeups & notes",
+    href: "/blogs",
+    icon: BookOpen,
+    delay: 0.2,
+  },
+  {
+    title: "Research",
+    description: "Papers, experiments & findings",
+    href: "/research",
+    icon: FlaskConical,
+    delay: 0.3,
+  },
+  {
+    title: "About",
+    description: "Projects, experience & more",
+    href: "/about",
+    icon: User,
+    delay: 0.4,
+  },
+];
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const { scrollYProgress } = useScroll();
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -35,10 +50,9 @@ export default function Home() {
 
   return (
     <StarfieldBackground>
-
       <Navbar />
 
-      {/* Sidebar */}
+      {/* Sidebar social links */}
       <div className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center space-y-6 md:flex">
         <motion.a
           href="https://github.com/abhinavuser"
@@ -62,15 +76,42 @@ export default function Home() {
 
       <main className="container relative z-10 py-10">
         {/* Hero Section */}
-        <section className="flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center py-20 md:flex-row md:justify-between md:py-0">
+        <section className="flex min-h-[calc(100vh-6rem)] flex-col items-center justify-center gap-16 py-20 lg:flex-row lg:justify-between lg:gap-24">
+          {/* Left side: Name, typing animation, and intro */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-10 max-w-lg md:mb-0"
+            className="flex flex-col items-center text-center lg:items-start lg:text-left"
           >
-            <h1 className="mb-4 text-4xl font-bold md:text-6xl">Abhinav Kumar V</h1>
-            <div className="mb-6 h-16 text-2xl font-medium text-primary md:text-3xl">
+            {/* Profile image: visible on mobile, hidden on large screens where it goes to the right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-8 block lg:hidden"
+            >
+              <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-primary/30 shadow-2xl">
+                <img
+                  src="/images/abhinav.JPG"
+                  alt="Abhinav Kumar"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-2 text-sm font-medium uppercase tracking-widest text-muted-foreground"
+            >
+              Hello, I&apos;m
+            </motion.p>
+            <h1 className="mb-4 text-3xl font-bold md:text-5xl">
+              Abhinav Kumar V
+            </h1>
+            <div className="mb-8 h-10 text-lg font-medium text-primary md:text-xl">
               <TypeAnimation
                 sequence={[
                   "Embedded Electronics Engineer",
@@ -87,303 +128,70 @@ export default function Home() {
                 repeat={Number.POSITIVE_INFINITY}
               />
             </div>
-            <p className="mb-8 text-muted-foreground">
-              Welcome to my portfolio!
-            </p>
-            <div className="flex space-x-4">
-            <a href="#contact">
-              <Button>Contact Me</Button>
-            </a>
-            <a href="#projects" >
-              <Button variant="outline">View Projects</Button>
-            </a>
 
+            {/* Navigation Cards */}
+            <div className="grid w-full max-w-md grid-cols-1 gap-3">
+              {navCards.map((card) => (
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: card.delay }}
+                >
+                  <Link href={card.href} className="group block">
+                    <div className="flex items-center justify-between rounded-xl border border-border/50 bg-background/50 px-6 py-4 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:bg-background/80 hover:shadow-lg hover:shadow-primary/5">
+                      <div className="flex items-center gap-4">
+                        <card.icon className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-primary" />
+                        <div>
+                          <p className="font-semibold transition-colors group-hover:text-primary">
+                            {card.title}
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            {card.description}
+                          </p>
+                        </div>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-primary" />
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
-          <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="relative h-64 w-64 overflow-hidden rounded-lg md:h-80 md:w-80"
-            >
-              <img
-              src="/images/abhinav.JPG"
-              alt="abhinav" className="h-full w-full object-cover" />
-            </motion.div>
 
-        </section>
-
-        {/* About Section */}
-        <section id="about" className="py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16 text-center"
-          >
-            <h2 className="mb-2 text-3xl font-bold md:text-4xl">About Me</h2>
-            <div className="mx-auto mb-4 h-1 w-20 bg-primary"></div>
-            <p className="text-muted-foreground">Get to know me</p>
-          </motion.div>
-
-          <div className="flex flex-col items-center gap-10 md:flex-row md:items-start">
+          {/* Right side: Profile image (large screens only) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-primary md:h-80 md:w-80"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="hidden lg:block"
           >
-            <img
-              src="/images/abhinav.JPG"
-              alt="John Doe"
-              className="h-full w-full object-cover"  // Ensure it covers the circle fully
-            />
-          </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="max-w-lg ml-auto"
+            <div
+              className="relative h-64 w-64 overflow-hidden rounded-2xl border border-border/30 shadow-2xl xl:h-80 xl:w-80"
+              style={{
+                transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)`,
+                transition: "transform 0.3s ease-out",
+              }}
             >
-              <h3 className="mb-4 text-2xl font-bold">Who am I?</h3>
-              <p className="mb-4">
-              Embedded AI Engineer with expertise in MLOps, Hardware across a range of SoCs and a passion for anything Mathematics. Whether exploring in lab or coding late into the night, I'm excited to tackle any challenging projects.
-              </p>
-              <p className="mb-6">
-              I am an Embedded Electronics Engineer with a focus on embedded firmware, machine learning, and MLOps. I have experience deploying ML models on microcontrollers and SBCs like STM32, ESP32, and Raspberry Pi, with expertise in firmware, middleware, and Embedded Linux. My work spans the full ML lifecycle, from training to deployment, including model compression and optimization for edge devices. My research interests lie at the intersection of LLMs, agentic AI, and RAG, working with open-source models and frameworks to explore alignment, multi-agent systems, and efficient deployment on constrained hardware.
-              </p>
-              <Link href="/about" className="inline-block">
-                <Button
-                  size="lg"
-                  className="group mb-6 rounded-xl bg-gradient-to-r from-primary to-gray-600 text-primary-foreground shadow-lg ring-2 ring-primary/40 hover:from-gray-700 hover:to-primary hover:ring-primary/60 transition-all"
-                >
-                  Read more about me
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </Link>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <p className="font-medium">Name:</p>
-                  <p className="text-muted-foreground">Abhinav Kumar</p>
-                </div>
-                <div>
-                  <p className="font-medium">Major:</p>
-                  <p className="text-muted-foreground">Electrical & Electronics Engineering</p>
-                </div>
-                <div>
-                  <p className="font-medium">Location:</p>
-                  <p className="text-muted-foreground">Chennai, Tamil Nadu</p>
-                </div>
-                <div>
-                  <p className="font-medium">Institute:</p>
-                  <p className="text-muted-foreground">VIT Chennai</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Marquee Section */}
-        <Marquee />
-
-        {/* Experience Section */}
-        <section id="experience" className="py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16 text-center"
-          >
-            <h2 className="mb-2 text-3xl font-bold md:text-4xl">My Experience</h2>
-            <div className="mx-auto mb-4 h-1 w-20 bg-primary"></div>
-            <p className="text-muted-foreground">My professional journey</p>
-          </motion.div>
-
-          <ExperienceTimeline />
-        </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16 text-center"
-          >
-            <h2 className="mb-2 text-3xl font-bold md:text-4xl">My Projects</h2>
-            <div className="mx-auto mb-4 h-1 w-20 bg-primary"></div>
-            <p className="text-muted-foreground">Some of my works</p>
-          </motion.div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <ProjectCard
-              title="VESTERN"
-              description="All-in-One Financial Assistant - Bringing ease to Financing & Investing through fully automated Financial Agent"
-              image="/images/vestern.png"
-              tags={["Jupyter", "Python","RAG","Next.js", "Flutter", "Postresql"]}
-              link="https://github.com/abhinavuser/VESTERN"
-            />
-            <ProjectCard
-              title="Oil Detection"
-              description="Automated oil spill detection system for early detection of oil spills using ResNet Models- smart india hackothon project"
-              image="/images/oil.png"
-              tags={["Python", "PHP", "Pytorch", "Flask", "HTML", "CSS", "JS"]}
-              link="https://github.com/abhinavuser/oil_detection_sih"
-            />
-            <ProjectCard
-              title="DefenShe"
-              description="Women safety software and SOS detection Model Interface"
-              image="/images/women.png"
-              tags={["Python", "Javascript", "Firebase", "Flask", "Flutter"]}
-              link="https://github.com/abhinavuser/women-safety"
-            />
-            <ProjectCard
-              title="Network Intrusion"
-              description="Network Intrusion and Anomaly Detection via TCP/IP Dump Analysis"
-              image="/images/network.png"
-              tags={["Python", "Pandas", "TKinter", "Scikit-learn"]}
-              link="https://github.com/abhinavuser/network_intrusion"
-            />
-            <ProjectCard
-              title="nStore Interface"
-              description="An Automatic Customizable Order Management System for nStore E-Commerce Company - Internship Project"
-              image="/images/nstore.png"
-              tags={["Vue.js", "Node.js","Express.js", "API Integration","Postman"]}
-              link="https://github.com/abhinavuser/nstoreinterface"
-            />
-            <ProjectCard
-              title="Cardiac App"
-              description="Real-Time Heart-Rate Tracking Application Using AD8232 ECG Sensor Controlled by ESP32"
-              image="/images/cardiac.jpg"
-              tags={["Flutter", "Arduino IDE", "PyPortal", "ESP32", "Firebase"]}
-              link="https://github.com/abhinavuser/cardiac_tracker"
-            />
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section id="skills" className="py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16 text-center"
-          >
-            <h2 className="mb-2 text-3xl font-bold md:text-4xl">My Skills</h2>
-            <div className="mx-auto mb-4 h-1 w-20 bg-primary"></div>
-            <p className="text-muted-foreground">Technologies I work with</p>
-          </motion.div>
-
-          <SkillsGrid />
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16 text-center"
-          >
-            <h2 className="mb-2 text-3xl font-bold md:text-4xl">Get In Touch</h2>
-            <div className="mx-auto mb-4 h-1 w-20 bg-primary"></div>
-            <p className="text-muted-foreground">Let's work together</p>
-          </motion.div>
-
-          <div className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h3 className="mb-4 text-2xl font-bold">Contact Information</h3>
-              <p className="mb-6">
-                Feel free to reach out to me for any inquiries, project proposals, or just to say hello!
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-map-pin"
-                    >
-                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Location</h4>
-                    <p className="text-muted-foreground">Chennai, Tamil Nadu</p>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-mail"
-                    >
-                      <rect width="20" height="16" x="2" y="4" rx="2" />
-                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Email</h4>
-                    <p className="text-muted-foreground">chipnxv@gmail.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-phone"
-                    >
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Phone</h4>
-                    <p className="text-muted-foreground">99949 22460</p>
-                  </div>
-                </div>
-              </div>
+              <img
+                src="/images/abhinav.JPG"
+                alt="Abhinav Kumar"
+                className="h-full w-full object-cover"
+              />
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
             </div>
-            <ContactForm />
-          </div>
+          </motion.div>
         </section>
       </main>
 
       <footer className="border-t bg-background py-8">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p>&copy; {new Date().getFullYear()} Abhinav Kumar . All rights reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} Abhinav Kumar . All rights
+              reserved.
+            </p>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/abhinavuser"
@@ -407,7 +215,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-      </StarfieldBackground>
-  )
+    </StarfieldBackground>
+  );
 }
-

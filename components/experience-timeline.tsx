@@ -7,12 +7,31 @@ import Image from "next/image"
 
 const experiences = [
   {
+    title: "Rsearch Intern",
+    company: "IIT Madras",
+    period: "June 2026 – Present",
+    logo: "/images/iitm.jpg",
+    description: [
+      "Working on the development of firmware for the company's products unit testing unique development boards with different Industry standard Sensors."
+    ],
+  },
+  {
     title: "Embedded Firmware Engineer",
     company: "Ampnics",
     period: "July 2025 – Present",
     logo: "/images/ampnics.jpg",
     description: [
       "Working on the development of firmware for the company's products unit testing unique development boards with different Industry standard Sensors."
+    ],
+  },
+  {
+    title: "AI/ML Intern",
+    company: "Kshatra Labs",
+    period: "Dec 2025 – Apr 2026",
+    logo: "/images/kshatra.jpg",
+    description: [
+      "Integrated multi-agent workflows, AI-powered code generation, and SAP S/4HANA for intelligent automation.",
+      "Developed an Agentic LLM framework to automate SAP ABAP development and business processes using Generative AI, and gained hands-on experience in ABAP."
     ],
   },
   {
@@ -59,7 +78,7 @@ const experiences = [
   {
     title: "AI/ML Lead",
     company: "Microsoft Innovations Club",
-    period: "Oct 2024 - Present",
+    period: "Oct 2024 - May 2026",
     logo: "/images/mic.jpg",
     description: [
       "AI/ML Lead overseeing AI projects, mentoring team members, and organizing ML events on Kaggle.",
@@ -69,7 +88,7 @@ const experiences = [
   {
     title: "Technical Team Member",
     company: "Google Developer Groups Club",
-    period: "Sep 2024 - Present",
+    period: "Oct 2024 - Dec2025",
     logo: "/images/gdg.jpg",
     description: [
       "Involved in club meetings and volunteered as the Co-Organizer of DevsHouse’25 MLH hackathon.",
@@ -79,7 +98,7 @@ const experiences = [
   {
     title: "Technical Team Member",
     company: "IEEE Computer Society",
-    period: "Aug 2024 - Present",
+    period: "Sep 2024 - Sep 2025",
     logo: "/images/ieee.jpg",
     description: [
       "Worked on developing websites for events like Hackhub’25 and Builders Hut.",
@@ -94,9 +113,8 @@ export function ExperienceTimeline() {
       {experiences.map((experience, index) => (
         <div
           key={index}
-          className={`flex flex-col ${
-            index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-          } items-center gap-8`}
+          className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+            } items-center gap-8`}
         >
           <motion.div
             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}

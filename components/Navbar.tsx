@@ -9,14 +9,12 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const isAboutPage = pathname === "/about";
 
   const navItems = [
-    { label: "About", href: isAboutPage ? "/about" : "#about" },
-    { label: "Experience", href: isAboutPage ? "/#experience" : "#experience" },
-    { label: "Projects", href: isAboutPage ? "/#projects" : "#projects" },
-    { label: "Skills", href: isAboutPage ? "/#skills" : "#skills" },
-    { label: "Contact", href: isAboutPage ? "/#contact" : "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Research", href: "/research" },
+    { label: "About", href: "/about" },
   ];
 
   return (
@@ -29,7 +27,14 @@ export default function Navbar() {
           <ul className="flex space-x-8 text-sm font-semibold">
             {navItems.map((item) => (
               <li key={item.label}>
-                <Link href={item.href} className="hover:text-primary  transition-all duration-300 ease-in-out">
+                <Link
+                  href={item.href}
+                  className={`hover:text-primary transition-all duration-300 ease-in-out ${
+                    pathname === item.href
+                      ? "text-primary underline underline-offset-4"
+                      : "text-muted-foreground"
+                  }`}
+                >
                   {item.label}
                 </Link>
               </li>
@@ -57,4 +62,3 @@ export default function Navbar() {
     </header>
   );
 }
-
